@@ -68,7 +68,20 @@
 </head>
 <body>
 
-<script src="kotlin-wasm-browser-example.js"></script>
+<div id="editor-container" style="height: 400px;"></div>
+
+<script src="node_modules/monaco-editor/min/vs/loader.js"></script>
+<script>
+    require.config({ paths: { 'vs': 'node_modules/monaco-editor/min/vs' }});
+    require(['vs/editor/editor.main'], function() {
+        // Monaco Editor is now available
+        const editor = monaco.editor.create(document.getElementById('editor-container'), {
+            value: 'console.log("Hello, Monaco Editor!");',
+            language: 'javascript',
+            theme: 'vs-dark',
+        });
+    });
+</script>
 
 <div id="warning">
     ⚠️ Please make sure that your runtime environment supports the latest version of Wasm GC and Exception-Handling proposals.
@@ -89,6 +102,7 @@
 </div>
 
 </body>
+
 
 <script type="application/javascript" >
     const unhandledError = (event, error) => {
