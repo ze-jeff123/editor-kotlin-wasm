@@ -7,7 +7,8 @@ import org.w3c.dom.HTMLInputElement
 
 fun main() {
     document.body?.appendElement("div") {
-        appendText("Hello world213!")
+        this.appendText("Hello world213!")
+        this.className = "main-container"
         /*appendText("Time in ")
 
         val output = document.createElement("span")

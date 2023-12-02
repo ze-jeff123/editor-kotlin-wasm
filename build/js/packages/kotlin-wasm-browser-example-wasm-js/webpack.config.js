@@ -40,7 +40,7 @@ config.devServer = {
   "static": [
     "kotlin",
     "../../../processedResources/wasmJs/main",
-    "/home/tudor/repos/kotlin-wasm-examples/browser-example"
+    "/home/tudor/repos/jetbrains-editor"
   ],
   "client": {
     "overlay": {
